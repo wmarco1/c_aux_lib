@@ -68,6 +68,32 @@ int dlinked_list_get_root(Collection *c,DLinkedListNode* node){
 	return 0;
 	
 }
+void* dlinked_list_root2(Collection *c){
+	return c->store;
+}
+
+
+unsigned int dlinked_list_length(Collection* c){
+	
+	DLinkedListNode* cursor =(DLinkedListNode*) c->store;
+	unsigned int count;
+	if(cursor == NULL ) return 0;
+	
+	while( cursor!= NULL){
+		count++;	
+		cursor = cursor->next;
+	}
+	return count;
+	
+}
+POD dlinked_list_next2(Collection *c,void** node){
+	*node = ((DLinkedListNode*)node)->next;
+	if( *node == NULL) return ui32_to_POD(0);
+	else return (*node)->data;
+}
+
+
+
 int dlinked_list_next(Collection *c,void* node){
 	node = ((DLinkedListNode*)node)->next;
 	if( node == NULL) return 0;
