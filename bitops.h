@@ -84,6 +84,18 @@ binary test_bit( binary in, unsigned int n){
 
 
 #endif
+
+int count_ones(binary in){
+	int c=0;
+	for(int i=kBIT_BOUNDS; i--> 0; ) in & (0x1<<i) ? c++ : 0;
+	return c;
+}
+int count_zeroes(binary in){
+	int c=0;
+	for(int i=kBIT_BOUNDS; i--> 0; ) in & (0x1<<i) ? 0 : c++;
+	return c;
+}
+
 void set_string_array(char** s_arr, unsigned int num,...){
 	va_list args;
 	assert( num <= kMAX_OP_STRINGS);
