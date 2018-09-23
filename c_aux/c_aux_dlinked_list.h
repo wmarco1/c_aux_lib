@@ -36,6 +36,6 @@ POD* dlinked_list_PODP_at(DLinkedList *ll, unsigned int index);
 
 int dlinked_list_pop(DLinkedList *c, POD *out);
 
-void dlinked_list_insertN(DLinkedListNode *node, POD p);
+void dlinked_list_insert_after(DLinkedListNode *node, POD p);
 
-void dlinked_list_insertI(DLinkedList *ll, unsigned int  index, POD p);
+void dlinked_list_insert_at(DLinkedList *ll, unsigned int  index, POD p);

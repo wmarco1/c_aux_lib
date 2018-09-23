@@ -31,6 +31,11 @@
 
 	} POD;
 
+	typedef struct {
+		POD data;
+		uint32_t id;
+	} VAR;
+
 	inline POD i32_to_POD(int32_t n) { POD p; p.i32 = n; return p; };
 	inline POD ui32_to_POD(uint32_t n) { POD p; p.ui32 = n; return p; };
 	inline POD float_to_POD(float n) { POD p; p.f = n; return p; };
