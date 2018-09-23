@@ -79,7 +79,7 @@ binary set_bit( binary in, unsigned int n){
 binary test_bit( binary in, unsigned int n){
 	assert(n < kBIT_BOUNDS);
 	
-	return in & (1 << n);
+	return (in & (1 << n)) 1: 0;
 }  
 
 
@@ -188,6 +188,6 @@ void print_diff_bases(binary in){
 		
 	}
 
-	printf("%s", bin_str);
+	printf("%s\n", bin_str);
 	
 }

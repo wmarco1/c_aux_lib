@@ -112,12 +112,9 @@ return node;
 POD dlinked_list_POD_at(DLinkedList *ll, unsigned int index) {
 
 	return dlinked_list_node_at(ll, index)->data;
-	 
-
 
 }
 POD* dlinked_list_PODP_at(DLinkedList *ll, unsigned int index) {
-
 
 	return &dlinked_list_node_at(ll, index)->data;
 
@@ -126,12 +123,32 @@ POD* dlinked_list_PODP_at(DLinkedList *ll, unsigned int index) {
 
 
 
-void dlinked_list_insertAfter(DLinkedListNode *node, POD p) {
+void dlinked_list_insert_after(DLinkedListNode *node, POD p) {
 
 	DLinkedListNode *dln = (DLinkedListNode*)calloc(1, sizeof(DLinkedListNode));
 
+	_fassert(node !=NULL, "NULL ARG");
 
+	dln->prev = node;
+	dln->next = node->next;
+	node->next = dln;
+	dln->data = p;
 
 }
+
+void dlinked_list_insert_at(DLinkedList *ll,unsigned int  index, POD p) {
+
+	DLinkedListNode *dln = (DLinkedListNode*)calloc(1, sizeof(DLinkedListNode));
+	DLinkedListNode *node = dlinked_list_node_at(ll, index);
+
+	dln->next = node;
+	dln->prev = node->prev;
+	node->prev = dln;
+	if(dln->prev != NULL)dln->prev->next = dln;
+	else ll->root = dln;
+	dln->data = p;
+
+}
+
 
 

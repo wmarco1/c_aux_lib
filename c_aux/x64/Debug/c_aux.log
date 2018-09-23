@@ -1,3 +1,2 @@
 ﻿  c_aux.c
-c:\users\wmarco\documents\repos\c_aux_lib\c_aux\c_aux.c(25): warning C4477: 'printf' : format string '%d' requires an argument of type 'int', but variadic argument 1 has type 'POD'
   c_aux.vcxproj -> C:\Users\wmarco\Documents\Repos\c_aux_lib\x64\Debug\c_aux.exe
