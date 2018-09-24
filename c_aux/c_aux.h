@@ -9,6 +9,8 @@
 #include <math.h>
 #include <stdarg.h>  
 #include <signal.h>
+#include <stdint.h>
+
 //#include "c_aux_dlinked_list.h"
 
 
@@ -48,9 +50,28 @@ Example:
 _fatal("Some error expected %u", but got %u, expected, ouput);
 
 */
-
-#define _fassert(c, x, ...) do{ if(!c) _fatal(x, __VA_ARGS__);}while(0)
 #define _fatal(x, ...) __fatal (__FILENAME__,__FUNCSIG__,__LINE__, x , __VA_ARGS__ )
+
+
+/* MACRO _fassert(...)
+
+fatal assert. Same as _fatal mixed with assert(). Exmaple:
+
+
+
+_fassert( important > 200, "Important is 200 or lower (important = %d)", important);
+
+*/
+#define _fassert(c, x, ...) do{ if(!c) _fatal(x, __VA_ARGS__);}while(0)
+
+
+/* MACRO _fnassert(...)
+Call _fatal() if condition is met ( opposite of _fassert()) 
+
+_fnassert(important <= 200, "Error important to low %d", important);
+*/
+#define _fnassert(c, x, ...) do{ if(!c) _fatal(x, __VA_ARGS__);}while(0)
+
 
 /* MACRO _warn_msg(...)
 Similar to _fatal() except it will not break to debugger or exit.
@@ -195,3 +216,43 @@ inline void print_diff_bases(binary in) {
 
 	printf("%s\n", bin_str);
 }
+
+/*POD = Plain Old Data
+
+
+*/
+typedef union {
+
+	intmax_t iMAX;
+	uintmax_t uiMAX;
+
+	int64_t i64;
+	uint64_t ui64;
+
+	int32_t i32;
+	uint32_t ui32;
+
+	int16_t i16;
+	uint16_t ui16;
+
+	int8_t i8;
+	uint8_t ui8;
+
+	void* ptr;
+	char* str;
+	double d;
+	float f;
+
+} POD;
+
+typedef struct {
+	POD data;
+	uint32_t id;
+} VAR;
+
+
+inline POD ptr_to_POD(void* ptr) { POD p; p.ptr = ptr; return p; }
+inline POD i32_to_POD(int32_t n) { POD p; p.i32 = n; return p; };
+inline POD ui32_to_POD(uint32_t n) { POD p; p.ui32 = n; return p; };
+inline POD float_to_POD(float n) { POD p; p.f = n; return p; };
+inline POD str_to_POD(char* str) { POD p; p.str = str; return p; };
