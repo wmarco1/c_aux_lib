@@ -15,6 +15,7 @@
 		int(*pop)(Collection *c, POD *out);
 		int(*insert_at)(Collection *c, POD in, unsigned int index);
 		POD(*at)(Collection *c, unsigned int index);
+		POD(*swap)(Collection *c, unsigned int a, unsigned int b);
 		POD(*remove)(Collection *c, unsigned int index);
 		int(*find)(Collection *c, POD in);
 		unsigned int(*length)(Collection *c);

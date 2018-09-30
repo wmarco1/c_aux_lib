@@ -30,6 +30,12 @@
     <ClInclude Include="c_aux_dlinked_list.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="c_aux_deque.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="c_aux_sort.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="c_aux_dlinked_list.c">
@@ -39,6 +45,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="c_aux.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c_aux_deque.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="c_aux_sort.c">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

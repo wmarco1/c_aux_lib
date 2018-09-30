@@ -1,9 +1,3 @@
 ﻿  c_aux.c
-  c_aux_dlinked_list.c
-c:\users\wmarco\documents\repos\c_aux_lib\c_aux\c_aux_dlinked_list.c(32): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
-c:\users\wmarco\documents\repos\c_aux_lib\c_aux\c_aux_dlinked_list.c(73): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
-c:\users\wmarco\documents\repos\c_aux_lib\c_aux\c_aux_dlinked_list.c(98): warning C4018: '<': signed/unsigned mismatch
-c:\users\wmarco\documents\repos\c_aux_lib\c_aux\c_aux_dlinked_list.c(130): warning C4047: '!=': 'int' differs in levels of indirection from 'void *'
-  Generating Code...
-c:\users\wmarco\documents\repos\c_aux_lib\c_aux\c_aux_dlinked_list.c(45): warning C4715: 'dlinked_list_end': not all control paths return a value
+c:\users\wmarco\documents\repos\c_aux_lib\c_aux\c_aux.c(21): warning C4101: 'p': unreferenced local variable
   c_aux.vcxproj -> C:\Users\wmarco\Documents\Repos\c_aux_lib\x64\Debug\c_aux.exe

@@ -14,10 +14,15 @@ typedef struct DLinkedList DLinkedList;
 struct DLinkedList {
 	DLinkedListNode *root;
 };
+void dlinked_list_swap_node_index(DLinkedList *l,unsigned int a, unsigned int b);
 
+void dlinked_list_swap_node(DLinkedListNode *a, DLinkedListNode *b);
+int dlinked_list_root(DLinkedList *c, POD *out);
+int dlinked_list_remove_root(DLinkedList*c);
 
-
-
+DLinkedListNode * dlinked_list_root_node(DLinkedList* c);
+void dlinked_list_swap_data_index(DLinkedList *d, unsigned int ai, unsigned int bi);
+int dlinked_list_cycle_check(DLinkedList *c);
 
 void dlinked_list_init(DLinkedList *ll);
 

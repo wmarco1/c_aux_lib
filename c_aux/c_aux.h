@@ -217,6 +217,31 @@ inline void print_diff_bases(binary in) {
 	printf("%s\n", bin_str);
 }
 
+
+inline c_aux_swap_mem(void *src, void *dst, unsigned int size) {
+	char *p = malloc(size);
+
+	memcpy(p, dst, size);
+	memcpy(dst, src, size);
+	memcpy(src, p, size);
+
+	free(p);
+
+}
+inline c_aux_shift_mem(void *src, unsigned int size, unsigned int shift) {
+	int8_t *base = src;
+	int8_t *base_end = base + size;
+	int8_t *shift_end = base + size + shift;
+
+	while (base_end >= base) {
+		*shift_end = *base_end;
+		shift_end--;
+		base_end--;
+	}
+
+}
+
+
 /*POD = Plain Old Data
 
 

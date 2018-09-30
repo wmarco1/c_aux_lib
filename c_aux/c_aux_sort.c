@@ -60,7 +60,7 @@ void* c_aux_addr(void * arr, unsigned int i, unsigned	int len, unsigned long siz
 
 
 }
-c_aux_slection_insertion_arr(void* arr, int len, int osize, int(*cfunc)(void *a, void *b)) {
+c_aux_insertion_sort_arr(void* arr, int len, int osize, int(*cfunc)(void *a, void *b)) {
 	int8_t * carr = arr;
 	int8_t *p = malloc(osize);
 

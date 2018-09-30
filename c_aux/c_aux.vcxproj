@@ -149,13 +149,17 @@
   <ItemGroup>
     <ClInclude Include="c_aux.h" />
     <ClInclude Include="c_aux_collections.h" />
+    <ClInclude Include="c_aux_deque.h" />
     <ClInclude Include="c_aux_dlinked_list.h" />
+    <ClInclude Include="c_aux_sort.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="c_aux.c" />
+    <ClCompile Include="c_aux_deque.c" />
     <ClCompile Include="c_aux_dlinked_list.c" />
+    <ClCompile Include="c_aux_sort.c" />
     <ClCompile Include="stdafx.c">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
